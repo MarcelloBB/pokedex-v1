@@ -3,9 +3,12 @@ import SearchInput from "./SearchInput"
 
 const Navbar = ({ pokemonFilter, searchValue, handleChange }) => {
   return (
-    <nav className="bg-zinc-900/80 shadow-lg px-5  flex 
-      flex-col justify-center items-center gap-8 py-10
-      lg:md:flex-row  lg:md:justify-around lg:md:items-center lg:md:py-8"
+    <nav className="flex flex-col justify-center items-center gap-8
+    bg-zinc-900/80 shadow-lg px-5 py-10
+      lg:md:flex-row 
+      lg:md:justify-around 
+      lg:md:items-center 
+      lg:md:py-8"
     >
       <div className="">
         <img
@@ -15,9 +18,12 @@ const Navbar = ({ pokemonFilter, searchValue, handleChange }) => {
         />
       </div>
 
-      <form className="flex flex-row justify-center items-center bg-zinc-900 px-3 py-1 gap-3 rounded-lg lg:md:w-1/4 border border-violet-700 
-        font-semibold hover:border-violet-300 transition-colors focus:outline-none focus:ring-2 
-      focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background"
+      <form 
+        className="flex flex-row justify-center items-center gap-3
+        bg-zinc-900 font-semibold px-3 py-1 rounded-lg  
+          border border-violet-700 hover:border-violet-300 transition-colors 
+          focus:outline-none focus:ring-2 focus:ring-violet-600 focus:ring-offset-2 focus:ring-offset-background
+          lg:md:w-1/4"
       >
         <Binoculars 
           size={32}

@@ -8,6 +8,7 @@ import PokemonNotFound from "../../components/PokemonNotFound"
 const Home = () => {
   const [pokemons, setPokemons] = useState([])
   const [searchValue, setSearchValue] = useState("")
+
   const pokemonLimit = 50
 
   const getPokemons = async () => {
@@ -19,22 +20,6 @@ const Home = () => {
 
     const responses = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then(res => setPokemons(res))
   }
-
-  /* const searchPokemons = (name) => {
-    const filteredPokemons = []
-
-    if (name === "") {
-      getPokemons()
-    }
-
-    pokemons.forEach((pokemon, index) => {
-      if (pokemon.data.name.includes(name)) {
-        filteredPokemons.push(pokemon)
-      }
-    })
-
-    setPokemons(filteredPokemons)
-  } */
 
   const filteredPokemons = !!searchValue  
     ? pokemons.filter(pokemon => pokemon.data.name.toLowerCase().includes(searchValue.toLowerCase()))
@@ -49,15 +34,22 @@ const Home = () => {
     getPokemons()
   }, [])
 
+  const pokemonExists = filteredPokemons.length > 0
+
   return (
-    <div>
+    <div className="Home">
       <Navbar 
         searchValue={searchValue}
         handleChange={handleChange}
       />
 
-      {filteredPokemons.length > 0 && (
-        <div className="grid grid-cols-1 sm:md:grid-cols-2 lg:grid-cols-4 lg:mx-20">
+      {pokemonExists && (
+        <div 
+          className="grid grid-cols-1 
+            sm:md:grid-cols-2 
+            lg:grid-cols-4 
+            lg:mx-20"
+        >
           {filteredPokemons.map((pokemon, index) => (
             <Pokemon 
               key={index}
@@ -71,13 +63,11 @@ const Home = () => {
         </div>
       )}
 
-      {filteredPokemons.length === 0 && (
+      {!pokemonExists && (
         <PokemonNotFound 
           pokemon={searchValue}
         />
       )}
-      
-
     </div>
   )
 }

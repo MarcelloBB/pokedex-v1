@@ -7,57 +7,92 @@ const Pokemon = ({ name, type, weight, height, image }) => {
   const mainType = type[0].type.name
 
   return (
-    <div className="p-2 shadow-xl bg-zinc-800/60 hover:bg-zinc-800 
-      rounded-xl transition duration-300 ease-in m-2 my-10 mx-auto lg:mx-2 max-w-sm w-9/12 lg:w-auto" // max-w-sm w-8/12
+    <div className="p-2 m-2 my-10 mx-auto w-9/12 max-w-sm shadow-xl rounded-xl 
+      bg-zinc-800/60 hover:bg-zinc-800 
+       transition duration-300 ease-in
+       lg:mx-2 
+       lg:w-auto" 
     >
-      <div className="p-4 h-full rounded-lg overflow-hidden flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center
+        p-4 h-full rounded-lg overflow-hidden"
+      >
         <img 
           src={image} 
-          alt="" 
-          className="w-full object-cover object-center" // max-h-64
+          alt="Pokemon Image" 
+          className="w-full object-cover object-center" 
         />
 
-        {/* name */}
-        <h2 className="font-bold mt-2 text-2xl first-letter:uppercase">{name}</h2>
+        <h2 
+          className="font-bold mt-2 text-2xl first-letter:uppercase"
+        >
+          {name}
+        </h2>
 
-        <div className="p-6 mb-2 flex flex-col justify-center items-start">
-          {/* types */}
-          <div className=" text-xs font-medium leading-relaxed text-green-600 flex items-center gap-1">
+        <div className="flex flex-col justify-center items-start
+          p-6 mb-2"
+        >
+          {/* TYPE */}
+          <div className="flex items-center gap-1
+            text-xs font-medium leading-relaxed text-green-600"
+          >
             <Atom 
               size={16}
               weight="thin"
             />
-            Type: 
-            <span className="text-xs text-zinc-300 ml-2">{mainType}</span>                
+
+            <p>Type:</p>
+
+            <span 
+              className="text-xs text-zinc-300 ml-1"
+            >
+              {mainType}
+            </span>                
           </div>
 
-          {/* weight */}
-          <div className="text-xs font-medium leading-relaxed text-green-600 flex items-center gap-1">
+          {/* WEIGHT */}
+          <div className="flex items-center gap-1 
+            text-xs font-medium leading-relaxed text-green-600"
+          >
             <Barbell 
               size={16}
               weight="thin"
             />
-            Weight (hg): 
-            <span className="text-xs text-zinc-300 ml-2">{weight}</span>
+
+            <p>Weight (hg):</p>
+
+            <span
+              className="text-xs text-zinc-300 ml-1"
+            >
+              {weight}
+            </span>
           </div>
 
-          {/* height */}
-          <div className="text-xs font-medium leading-relaxed text-green-600 flex items-center gap-1">
+          {/* HEIGHT */}
+          <div className="flex items-center gap-1
+            text-xs font-medium leading-relaxed text-green-600"
+          >
             <Ruler 
               size={16}
               weight="thin"
             />
-            Height (dm): 
-            <span className="text-xs text-zinc-300 ml-2">{height}</span>
-          </div>
 
+            <p>Height (dm):</p>
+
+            <span 
+              className="text-xs text-zinc-300 ml-1"
+            >
+              {height}
+            </span>
+          </div>
         </div>
 
+        {/* READ MORE */}
         <div className="flex items-center flex-wrap p-1 justify-center">
           <a 
             href="https://pokeapi.co/" 
-            className="text-violet-500 inline-flex items-center md:mb-2 lg:mb-0
-            hover:text-violet-700 transition-colors text-sm"
+            className="inline-flex items-center 
+            text-violet-500 hover:text-violet-700 transition-colors text-sm
+              md:mb-2 lg:mb-0"
           >
             Read more
 
@@ -68,7 +103,6 @@ const Pokemon = ({ name, type, weight, height, image }) => {
             />
           </a>
         </div>
-
       </div>
     </div>
   )

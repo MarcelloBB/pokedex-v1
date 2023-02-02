@@ -25,19 +25,19 @@ const Navbar = () => {
         <a href="https://github.com/MarcelloBB">
           <GithubLogo 
             size={25}
-            className="text-violet-700"
+            className="text-violet-700 hover:text-violet-300 transition-colors duration-200 ease-in"
           />
         </a>
         <a href="https://github.com/MarcelloBB/pokedex-v1">
           <GitBranch 
             size={25}
-            className="text-violet-700"
+            className="text-violet-700 hover:text-violet-300 transition-colors duration-200 ease-in"
           />
         </a>
         <a href="https://www.linkedin.com/in/marcello-belanda-batista-362109262/">
           <LinkedinLogo 
             size={25}
-            className="text-violet-700"
+            className="text-violet-700 hover:text-violet-300 transition-colors duration-200 ease-in"
           />
         </a>
       </div>

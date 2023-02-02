@@ -14,7 +14,7 @@ npm run dev
 ```
 
 * In Netlify (build)
-https://github.com/MarcelloBB/pokedex-v1
+https://marcellobbpokedex.netlify.app/
 
 
 ## 📜 Techs

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Navbar from "../../components/Navbar"
 import Pokemon from "../../components/Pokemon"
 import PokemonNotFound from "../../components/PokemonNotFound"
+import SearchInput from "../../components/SearchInput"
 
 const Home = () => {
   const [pokemons, setPokemons] = useState([])
@@ -38,7 +39,9 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <Navbar 
+      <Navbar />
+      
+      <SearchInput 
         searchValue={searchValue}
         handleChange={handleChange}
       />

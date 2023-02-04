@@ -14,7 +14,7 @@ npm run dev
 ```
 
 * In Netlify (build)
-https://marcellobbpokedex.netlify.app/
+https://marcellobb-pokedex.netlify.app/
 
 
 ## 📜 Techs

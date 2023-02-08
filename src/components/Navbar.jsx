@@ -34,7 +34,7 @@ const Navbar = () => {
             className="text-violet-700 hover:text-violet-300 transition-colors duration-200 ease-in"
           />
         </a>
-        <a href="https://www.linkedin.com/in/marcello-belanda-batista-362109262/">
+        <a href="www.linkedin.com/in/marcello-belanda-batista">
           <LinkedinLogo 
             size={25}
             className="text-violet-700 hover:text-violet-300 transition-colors duration-200 ease-in"
